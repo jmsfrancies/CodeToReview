@@ -1,5 +1,4 @@
-CREATE DATABASE
-MyGunStore
+USE MyGunStore;
 
 INSERT /*ADD Model Name, Barrel Length, Choke Type, Used or New, and Magazine Capacity*/
 INTO Firearms(

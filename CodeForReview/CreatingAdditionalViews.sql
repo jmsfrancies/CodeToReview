@@ -1,6 +1,5 @@
-CREATE DATABASE
-MyGunStore
-GO
+USE
+MyGunStore;
 
 /*List of any given Firearm with a Compatbile Ammo in the Database can be looked up */
 
@@ -17,8 +16,7 @@ AS
         ON F.Caliber = C.FirearmCaliber
     GROUP BY F.FirearmID,F.ModelName,F.FirearmBrand,F.Caliber,
 C.CompatibleCaliber1,C.CompatibleCaliber2
-    HAVING F.FirearmBrand != ''
-GO
+    HAVING F.FirearmBrand != '';
 
 /*Inventory for Compatible Caliber One View Created*/
 
@@ -70,8 +68,7 @@ AS
         CONCAT('$', CONVERT(DECIMAL(8,2),(FirearmPrice*.90))) AS 'Rifle After Discount'
     FROM Firearms F JOIN Discounts D ON
 F.DiscountID = D.DiscountID
-    WHERE F.DiscountID = '1'
-GO
+    WHERE F.DiscountID = '1';
 
 
 /*Handgun Discounts Views Created*/
@@ -90,8 +87,7 @@ AS
         CONCAT('$', CONVERT(DECIMAL(8,2),(FirearmPrice*.95))) AS 'Handgun After Discount'
     FROM Firearms F JOIN Discounts D ON
 F.DiscountID = D.DiscountID
-    WHERE F.DiscountID = '2'
-GO
+    WHERE F.DiscountID = '2';
 
 
 /*Black Powder Discounts Views Created*/
@@ -110,8 +106,7 @@ AS
         CONCAT('$', CONVERT(DECIMAL(8,2),(FirearmPrice*.92))) AS 'Black Powder Item After Discount'
     FROM Firearms F JOIN Discounts D ON
 F.DiscountID = D.DiscountID
-    WHERE F.DiscountID = '3'
-GO
+    WHERE F.DiscountID = '3';
 
 
 /*Discounts For Black Powder Accessories Created*/
@@ -131,8 +126,7 @@ AS
         CONCAT('$', CONVERT(DECIMAL(8,2),(ToolPrice*.92))) AS 'Black Powder Item After Discount'
     FROM Reloading R JOIN Discounts D ON
 R.DiscountID = D.DiscountID
-    WHERE R.DiscountID = '3'
-GO
+    WHERE R.DiscountID = '3';
 
 
 /*Shotgun Discounts View Created*/
@@ -151,8 +145,7 @@ AS
         CONCAT('$', CONVERT(DECIMAL(8,2),(FirearmPrice*.89))) AS 'Shotgun After Discount'
     FROM Firearms F JOIN Discounts D ON
 F.DiscountID = D.DiscountID
-    WHERE F.DiscountID = '4'
-GO
+    WHERE F.DiscountID = '4';
 
 
 /*Shotgun Accessories Discounts Views Created*/
@@ -167,7 +160,7 @@ AS
         A.DiscountID,
         D.DiscountCode,
         D.DiscountDescription,
-        CONCAT('$', CONVERT(DECIMAL(8,2),(A.AccessoryPrice*.89))) AS 'Shotgun Accessory After Discount'
+        CONCAT('$', CONVERT(ROUND(8,2),(A.AccessoryPrice*.89))) AS 'Shotgun Accessory After Discount'
     FROM Accessories A JOIN Discounts D ON
 A.DiscountID = D.DiscountID
     WHERE A.DiscountID = '4';
