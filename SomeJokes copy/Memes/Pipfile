@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+graphics = "*"
+coloroma = "*"
+graphics-py = "*"
+colorama = "*"
+
+[packages]
+colorama = {editable = true,git = "https://github.com/tartley/colorama.git",ref = "0.4.1"}
+graphics = {editable = true,git = "https://github.com/kidGodzilla/graphics.py/blob/master/graphics.py"}
+
+[requires]
+python_version = "3.7"
