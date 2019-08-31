@@ -1,5 +1,6 @@
-CREATE DATABASE
+USE
 MyGunStore
+GO
 
 /*Alter Tables*/
 
@@ -51,3 +52,7 @@ ALTER TABLE Firearms
 ADD DiscountID INT NULL
 CONSTRAINT Firearms_fk_Discounts
 FOREIGN KEY (DiscountID) REFERENCES Discounts(DiscountID);
+
+/*This entire database took me three days
+This is what made me stay motivated to finish the MSSD.
+So I can be a better programmer for Data Analytics*/

@@ -1,4 +1,4 @@
-CREATE DATABASE
+USE
 MyGunStore
 GO
 

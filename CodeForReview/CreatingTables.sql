@@ -1,7 +1,7 @@
 /*CREATE DATABASE FILE*/
 CREATE DATABASE
 MyGunStore
-
+GO
 CREATE TABLE Firearms(
 FirearmID        INT          NOT NULL PRIMARY KEY,
 FirearmBrand     varchar(50)  NOT NULL,
