@@ -1,9 +1,7 @@
 from random import *
 
-
 def main():
     x = randrange(1,100)
-    print(x)
     tries = 0
     while tries != 5:
         y = int(input("Enter a number between 1-99: "))
