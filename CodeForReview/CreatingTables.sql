@@ -1,17 +1,14 @@
 /*CREATE DATABASE FILE*/
-/*
 CREATE DATABASE
-*/
-USE
-MyGunStore;
-
+MyGunStore
+GO
 CREATE TABLE Firearms(
 FirearmID        INT          NOT NULL PRIMARY KEY,
 FirearmBrand     varchar(50)  NOT NULL,
 FirearmType      varchar(50)  NOT NULL,
 ActionType       varchar(50)  NOT NULL,
 Caliber          varchar(50)  NOT NULL,
-FirearmPrice     real        NOT NULL,
+FirearmPrice     money        NOT NULL,
 FirearmQuantity  INT          NULL
 );
 
@@ -19,7 +16,7 @@ CREATE TABLE Accessories(
 AccessoryID  INT NOT NULL PRIMARY KEY,
 TypeOfAccessory varchar(50) NOT NULL,
 AccessoryBrand  varchar(50) NOT NULL,
-AccessoryPrice  real       NOT NULL,
+AccessoryPrice  money       NOT NULL,
 Quantity        INT         NULL
 );
 
@@ -27,7 +24,7 @@ CREATE TABLE Knives(
 KnifeID       INT         NOT NULL PRIMARY KEY,
 KnifeBrand    varchar(50) NOT NULL,
 KnifeType     varchar(50) NOT NULL,
-KnifePrice    real       NOT NULL,
+KnifePrice    money       NOT NULL,
 KnifeQuantity INT         NULL
 );
 
@@ -39,7 +36,7 @@ TypeOfBulllet  varchar(50)  NOT NULL,
 BulletWeight   varchar(50)  NOT NULL,
 FeetPerSecond  INT          NOT NULL,
 FootLbs        INT          NOT NULL,
-AmmoPrice      real        NOT NULL,
+AmmoPrice      money        NOT NULL,
 AmmoQuantity   INT          NULL
 );
 
@@ -47,7 +44,7 @@ CREATE TABLE GunCleaning(
 CleaningID        INT         NOT NULL PRIMARY KEY,
 CleaningBrand     varchar(50) NOT NULL,
 TypeOfCleaner     varchar(50) NOT NULL,
-PriceOfCleaner    real       NOT NULL,
+PriceOfCleaner    money       NOT NULL,
 QuantityOfCleaner INT         NULL
 );
 
@@ -77,24 +74,24 @@ DiscountDescription varchar(128) NOT NULL
 
 ALTER TABLE Knives
 ADD KnifeModel varchar(50),
-ADD BladeLength decimal(5,2),
-ADD SteelType varchar(50),
-ADD Restrictions varchar(50);
+BladeLength Decimal(5,2),
+SteelType varchar(50),
+Restrictions varchar(50);
 
 ALTER TABLE Ammo
 ADD PerBox INT;
 
 ALTER TABLE Reloading
-ADD ToolPrice real NOT NULL,
-ADD ToolQuantity INT NOT NULL;
+ADD ToolPrice money NOT NULL,
+ToolQuantity INT NOT NULL;
 
 ALTER TABLE Firearms
 ADD ModelName varchar(50), 
-ADD BarrelLength INT, 
-ADD ChokeType varchar(50) NULL, 
-ADD UsedOrNew varchar(50),
-ADD MagazineCapacity INT;
-/*
+BarrelLength INT, 
+ChokeType varchar(50) NULL, 
+UsedOrNew varchar(50),
+MagazineCapacity INT;
+
 ALTER TABLE Accessories
 ADD DiscountID INT NULL
 CONSTRAINT Accesories_fk_Discounts
@@ -123,4 +120,3 @@ ALTER TABLE Firearms
 ADD DiscountID INT NULL
 CONSTRAINT Firearms_fk_Discounts
 FOREIGN KEY (DiscountID) REFERENCES Discounts(DiscountID);
-*/

@@ -1,6 +1,6 @@
-CREATE DATABASE
+USE
 MyGunStore
-
+GO
 /*Update File*/
 
 UPDATE Ammo
@@ -173,4 +173,4 @@ SELECT ReloadingID,BrandOfReloader,TypeOfMaterial
 FROM Reloading
 WHERE ToolQuantity < 2;
 
-
+*/

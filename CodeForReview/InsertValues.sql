@@ -1,4 +1,6 @@
-USE MyGunStore;
+USE
+MyGunStore
+GO
 
 INSERT /*ADD Model Name, Barrel Length, Choke Type, Used or New, and Magazine Capacity*/
 INTO Firearms(
@@ -54,6 +56,7 @@ VALUES
 ('43','Black Powder','Pietta','Single Action','.36 Caliber', '200.00','1','1851 Confederate Navy','7',NULL,'New','5'),
 ('44','Black Powder','Pedersoli','Percussion Cap','.58 Calliber','900.00','1','Springfield 1861','40',NULL,'New','1'),
 ('45','Black Powder','Unknown','Flintllock','.54 Caliber','1900.00','1','Kentucky Long Rifle','42',NULL,'Used','1');
+
 
 
 INSERT 
