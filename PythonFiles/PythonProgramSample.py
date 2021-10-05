@@ -67,46 +67,8 @@ Employee6 = Employee(6,"Joseph","Steineger","Business Logic",95000)
 print(Employee5.getNet())
 
 
-"""
+
 print(Employee5.getFullName())
 print(Employee5.getFullHistory())
 print(Employee5.getAfterTaxes())
 print(Employee5.getRetirement())
-def main():
-    EmployeeStorage()
-    total = 0
-    UserInput = int(input("For the Full Name (1), For the Full History (2), For Salary After Taxes (3), For Retirement (4):"))
-    if UserInput == 1:
-        EmployeeList = [Employee1.getFullName(),Employee2.getFullName(),Employee3.getFullName(),
-        Employee4.getFullName(),Employee5.getFullName(),Employee6.getFullName()]
-        for i in range(len(EmployeeList)):
-            i = EmployeeList[0+total]
-            return i
-            total += 1
-    elif UserInput == 2:
-        EmployeeList = [Employee1.getFullHistory(),Employee2.getFullHistory(),Employee3.getFullHistory(),
-        Employee4.getFullHistory(),Employee5.getFullHistory(),Employee6.getFullHistory()]
-        for i in range(len(EmployeeList)):
-            i = EmployeeList[0+total]
-            return i
-            total += 1
-    elif UserInput == 3:
-        EmployeeList = [Employee1.getAfterTaxes(),Employee2.getAfterTaxes(),Employee3.getAfterTaxes(),
-        Employee4.getAfterTaxes(),Employee5.getAfterTaxes(),Employee6.getAfterTaxes()]
-        for i in range(len(EmployeeList)):
-            i = EmployeeList[0+total]
-            return i
-            total += 1
-    elif UserInput == 4:
-        EmployeeList = [Employee1.getRetirement(),Employee2.getRetirement(),Employee3.getRetirement(),
-        Employee4.getRetirement(),Employee5.getRetirement(),Employee6.getRetirement()]
-        for i in range(len(EmployeeList)):
-            i = EmployeeList[0+total]
-            return i
-            total += 1
-            
-            
-main()
-
-"""
-        
